@@ -1,0 +1,224 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Warna utama */
+:root {
+    --primary-color: #FF8C00; /* orange emas */
+    --secondary-color: #fff;   /* putih terang */
+    --bg-color: #121212;       /* hitam gelap */
+    --card-bg: #1E1E1E;        /* hitam untuk kartu */
+    --btn-hover: #FFA500;      /* orange lebih terang untuk hover */
+}
+
+#home {
+    background: url('../assets/images/home.avif') no-repeat center center;
+    background-size: cover; /* bikin gambar memenuhi section */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* teks putih biar terbaca */
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+/* Optional: overlay gelap supaya teks lebih terbaca */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* gelap transparan */
+    z-index: 0;
+}
+
+#home h1,
+#home p,
+#home .btn {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Body */
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header & Navbar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1a1a1a;
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+
+header .logo img {
+    height: 45px;          /* ukuran logo */
+    width: auto;           /* biar simetris */
+    object-fit: cover;     /* crop agar proporsional */
+    border-radius: 50%;    /* bikin lingkaran */
+    border: 2px solid var(--primary-color); /* optional, garis emas di tepi */
+}
+
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 1.5rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--primary-color);
+}
+
+/* Section umum */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem 4rem 2rem;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background: #181818;
+}
+
+/* Hero Section */
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#home p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    transform: translateY(-3px);
+}
+
+/* Membership Cards */
+.membership-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+}
+
+/* Contact Section */
+#contact p {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .membership-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media(max-width: 600px) {
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+}
