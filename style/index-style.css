@@ -206,19 +206,39 @@ footer {
 }
 
 /* Responsive */
+/* Tablet & mobile */
 @media(max-width: 900px) {
     .membership-cards {
         flex-direction: column;
         align-items: center;
+        gap: 1.5rem;
     }
 }
 
 @media(max-width: 600px) {
+    header nav {
+        padding: 0 1rem; /* navbar lebih pas di HP */
+    }
+
+    section {
+        padding: 4rem 1rem 3rem 1rem; /* padding kiri/kanan lebih kecil */
+    }
+
     #home h1 {
         font-size: 2rem;
     }
 
     #home p {
         font-size: 1rem;
+    }
+
+    #contact p,
+    #contact .btn {
+        text-align: center;
+        margin: 0 auto; /* center tombol WA */
+    }
+
+    .membership-cards {
+        gap: 1rem; /* jarak kartu lebih kecil di HP */
     }
 }
