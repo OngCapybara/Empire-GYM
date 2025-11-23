@@ -188,13 +188,122 @@ section:nth-child(even) {
     margin: 0 auto;
 }
 
+/* jam */
+
+.hours {
+    margin: 1rem 0 2rem 0;
+    text-align: center;
+}
+
+.hours p {
+    margin: 0.2rem 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#open-status {
+    font-weight: bold;
+    margin-left: 0.3rem;
+}
+
+
+/* map */
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
 /* Footer */
 footer {
     background: #1a1a1a;
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 1.5rem 0;
+    color: #fff;
+    padding: 3rem 2rem 1.5rem 2rem;
+    font-size: 0.9rem;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-brand img {
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+.footer-contact, .footer-social {
+    min-width: 180px;
+}
+
+.footer-contact h4,
+.footer-social h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact p,
+.footer-social a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.3rem;
+    transition: color 0.3s;
+}
+
+.footer-contact a.wa-link {
+    color: var(--primary-color); /* oranye emas */
+    font-weight: bold;
+    text-decoration: none;
+    display: inline;
+    margin-bottom: 0.3rem;
+    transition: color 0.3s;
+}
+
+.footer-contact a.wa-link:hover {
+    color: var(--btn-hover); /* orange terang saat hover */
+}
+
+
+.footer-social a:hover,
+.footer-contact a:hover {
+    color: var(--btn-hover);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    color: #aaa;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 
 /* Responsive */
 @media(max-width: 900px) {
