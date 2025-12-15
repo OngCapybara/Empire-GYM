@@ -1,6 +1,4 @@
-// js/main.js
-
-// Navbar highlight saat scroll
+// ===== Navbar highlight saat scroll =====
 const sections = document.querySelectorAll('section');
 const navLi = document.querySelectorAll('header nav ul li a');
 
@@ -22,10 +20,10 @@ window.addEventListener('scroll', () => {
     });
 });
 
-
+// ===== Status Gym Open/Close =====
 function checkGymStatus() {
     const now = new Date();
-    const day = now.getDay(); // 0 = Minggu, 1 = Senin ... 6 = Sabtu
+    const day = now.getDay(); // 0 = Minggu
     const hour = now.getHours();
     const minutes = now.getMinutes();
     const statusEl = document.getElementById('open-status');
@@ -42,7 +40,7 @@ function checkGymStatus() {
 
     const nowMinutes = hour*60 + minutes;
     const openMinutes = openHour*60 + 30; // 07:30
-    const closeMinutes = closeHour*60; // misal 21:00
+    const closeMinutes = closeHour*60;
 
     if(nowMinutes >= openMinutes && nowMinutes <= closeMinutes){
         statusEl.textContent = "OPEN";
@@ -55,3 +53,20 @@ function checkGymStatus() {
 
 // Jalankan saat load
 window.onload = checkGymStatus;
+
+// ===== Burger menu toggle =====
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+});
+
+// Tutup menu saat klik link di mobile
+navLi.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('open');
+    });
+});
