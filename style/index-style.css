@@ -485,39 +485,70 @@ footer {
 
 
 
-/* Mobile Navbar */
-@media(max-width: 768px) {
+/* ===================== */
+/* TABLET (<= 1024px) */
+/* ===================== */
+/* ===================== */
+/* TABLET (<= 1024px) */
+/* ===================== */
+@media (max-width: 1024px) {
+
     header nav {
         position: relative;
     }
 
-    /* tampilkan burger */
     .menu-toggle {
         display: flex;
     }
 
-    /* sembunyikan menu default */
     header nav ul.nav-links {
         position: absolute;
         top: 70px;
-        right: 1rem;
+        right: 1.5rem;
         background: #1a1a1a;
-        width: 220px;
+        width: 260px;
         flex-direction: column;
-        gap: 1rem;
-        padding: 1.2rem;
+        gap: 1.2rem;
+        padding: 1.5rem;
         display: none;
-        border-radius: 14px;
+        border-radius: 16px;
         box-shadow: 0 15px 30px rgba(0,0,0,0.6);
         z-index: 999;
         animation: slideDown 0.25s ease;
     }
-
-    /* aktif */
+    
     header nav ul.nav-links.active {
         display: flex;
     }
 
+    header nav ul.nav-links li a {
+        font-size: 1.05rem;
+    }
+
+    /* 🔥 PRODUCT → 2 kolom di tablet */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card img {
+        height: 190px;
+    }
+}
+
+
+/* ===================== */
+/* MOBILE (<= 768px) */
+/* ===================== */
+@media (max-width: 768px) {
+    /* menu lebih kecil di HP */
+    header nav ul.nav-links {
+        width: 220px;
+        right: 1rem;
+        padding: 1.2rem;
+        gap: 1rem;
+        border-radius: 14px;
+    }
+    
     header nav ul.nav-links li a {
         font-size: 1rem;
     }
@@ -527,24 +558,40 @@ footer {
     /* about */
     .about-container {
         flex-direction: column;
+        padding: 2rem 1.5rem;
     }
     
     .about-image img {
         height: 240px;
     }
-
-
+    
+    
+    
     /* facilities */
     .facility-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .facility-item img {
         height: 220px;
     }
+    
+    
+    /* product */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+
 }
 
-    /* animasi halus */
+
+/* ===================== */
+/* Animasi dropdown */
+/* ===================== */
 @keyframes slideDown {
     from {
         opacity: 0;
