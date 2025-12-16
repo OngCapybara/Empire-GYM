@@ -535,161 +535,6 @@ footer {
 
 
 
-/* ================= Responsive ================= */
-/* TABLET (<= 1024px) */
-@media (max-width: 1024px) {
-
-    header nav {
-        position: relative;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    header nav ul.nav-links {
-        position: absolute;
-        top: 70px;
-        right: 1.5rem;
-        background: #1a1a1a;
-        width: 260px;
-        flex-direction: column;
-        gap: 1.2rem;
-        padding: 1.5rem;
-        display: none;
-        border-radius: 16px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-        z-index: 999;
-        animation: slideDown 0.25s ease;
-    }
-    
-    header nav ul.nav-links.active {
-        display: flex;
-    }
-
-    header nav ul.nav-links li a {
-        font-size: 1.05rem;
-    }
-
-
-
-    /* product */
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .product-card img {
-        height: 190px;
-    }
-
-
-
-    /* calculator */
-    .calc-container {
-        max-width: 380px;
-        padding: 1.8rem;
-    }
-    
-    .calc-container h2 {
-        font-size: 1.5rem;
-    }
-}
-
-/* MOBILE (<= 768px) */
-@media (max-width: 768px) {
-    /* menu lebih kecil di HP */
-    header nav ul.nav-links {
-        width: 220px;
-        right: 1rem;
-        padding: 1.2rem;
-        gap: 1rem;
-        border-radius: 14px;
-    }
-    
-    header nav ul.nav-links li a {
-        font-size: 1rem;
-    }
-    
-    
-    
-    /* about */
-    .about-container {
-        flex-direction: column;
-        padding: 2rem 1.5rem;
-    }
-    
-    .about-image img {
-        height: 240px;
-    }
-    
-    
-    
-    /* facilities */
-    .facility-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .facility-item img {
-        height: 220px;
-    }
-    
-    
-    
-    /* product */
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .product-card img {
-        height: 200px;
-    }
-
-
-
-    /* calculator */
-    .calc-container {
-        max-width: 100%;
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-        border-radius: 20px;
-    }
-
-    .calc-container h2 {
-        font-size: 1.4rem;
-    }
-
-    .calc-container input,
-    .calc-container select {
-        font-size: 0.95rem;
-        padding: 0.9rem;
-        border-radius: 12px;
-    }
-
-    .calc-container button {
-        font-size: 1rem;
-        padding: 0.9rem;
-        border-radius: 14px;
-    }
-
-    #protein-result {
-        font-size: 1.15rem;
-        border-radius: 16px;
-    }
-}
-
-/* Animasi dropdown */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 /* ================================================ */
 /* ================= Protein Page ================= */
 /* ================================================ */
@@ -902,3 +747,196 @@ footer {
 
 
 
+/* ================= Responsive ================= */
+/* TABLET (<= 1024px) */
+@media (max-width: 1024px) {
+
+    header nav {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    header nav ul.nav-links {
+        position: absolute;
+        top: 70px;
+        right: 1.5rem;
+        background: #1a1a1a;
+        width: 260px;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.5rem;
+        display: none;
+        border-radius: 16px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+        z-index: 999;
+        animation: slideDown 0.25s ease;
+    }
+    
+    header nav ul.nav-links.active {
+        display: flex;
+    }
+
+    header nav ul.nav-links li a {
+        font-size: 1.05rem;
+    }
+
+
+
+    /* product */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card img {
+        height: 190px;
+    }
+
+
+
+    /* calculator */
+    .calc-container {
+        max-width: 380px;
+        padding: 1.8rem;
+    }
+    
+    .calc-container h2 {
+        font-size: 1.5rem;
+    }
+
+
+
+    /* protein */
+    .nutrition-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .food-card img {
+        height: 140px;
+    }
+
+    .food-card h3 {
+        font-size: 1rem;
+    }
+
+    .food-card ul li {
+        font-size: 0.85rem;
+    }
+}
+
+/* MOBILE (<= 768px) */
+@media (max-width: 768px) {
+    /* menu lebih kecil di HP */
+    header nav ul.nav-links {
+        width: 220px;
+        right: 1rem;
+        padding: 1.2rem;
+        gap: 1rem;
+        border-radius: 14px;
+    }
+    
+    header nav ul.nav-links li a {
+        font-size: 1rem;
+    }
+    
+    
+    
+    /* about */
+    .about-container {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-image img {
+        height: 240px;
+    }
+    
+    
+    
+    /* facilities */
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .facility-item img {
+        height: 220px;
+    }
+    
+    
+    
+    /* product */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card img {
+        height: 200px;
+    }
+    
+    
+    
+    /* calculator */
+    .calc-container {
+        max-width: 100%;
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .calc-container h2 {
+        font-size: 1.4rem;
+    }
+    
+    .calc-container input,
+    .calc-container select {
+        font-size: 0.95rem;
+        padding: 0.9rem;
+        border-radius: 12px;
+    }
+    
+    .calc-container button {
+        font-size: 1rem;
+        padding: 0.9rem;
+        border-radius: 14px;
+    }
+    
+    #protein-result {
+        font-size: 1.15rem;
+        border-radius: 16px;
+    }
+
+
+
+    /* protein */
+    .nutrition-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .food-card img {
+        height: 140px;
+    }
+
+    .food-card h3 {
+        font-size: 1rem;
+    }
+
+    .food-card ul li {
+        font-size: 0.85rem;
+    }
+}
+
+/* Animasi dropdown */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
