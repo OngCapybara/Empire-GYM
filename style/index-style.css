@@ -199,33 +199,77 @@ section:nth-child(even) {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .card {
     background: var(--card-bg);
-    border-radius: 15px;
+    border-radius: 18px;
     padding: 2rem 1.5rem;
-    width: 250px;
+    width: 260px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* efek glow halus */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.55);
 }
 
+/* gambar kecil */
+.card img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* judul */
 .card h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
 }
 
-.card p {
+/* harga */
+.card .price {
     color: var(--secondary-color);
-    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+/* tombol */
+.card .btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.card .btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
 }
 
 
