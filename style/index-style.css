@@ -185,6 +185,7 @@ section:nth-child(even) {
     font-weight: bold;
     border-radius: 5px;
     transition: background 0.3s, transform 0.2s;
+    pointer-events: auto !important;
 }
 
 .btn:hover {
@@ -223,6 +224,8 @@ section:nth-child(even) {
     background: linear-gradient(120deg, transparent, rgba(255,255,255,0.05), transparent);
     opacity: 0;
     transition: opacity 0.3s;
+    pointer-events: none;
+    
 }
 
 .card:hover::before {
@@ -269,7 +272,7 @@ section:nth-child(even) {
 }
 
 .card .btn:hover {
-    background: var(--secondary-color);
+    background: var(--btn-hover);
     transform: scale(1.05);
 }
 
