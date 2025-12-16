@@ -137,9 +137,14 @@ section:nth-child(even) {
 
 /* Hero Section */
 #home {
-    background: url('../assets/images/home.avif') no-repeat center center;
-    background-size: cover;
     position: relative;
+    min-height: 100vh;
+    background: url('../assets/images/home.avif') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
 }
 
 #home::before {
