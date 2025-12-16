@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* all */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Warna utama */
+
+
+/* root color */
 :root {
     --primary-color: #FF8C00; /* orange emas */
     --secondary-color: #fff;   /* putih terang */
@@ -19,12 +21,16 @@ html {
     --btn-hover: #FFA500;      /* orange lebih terang untuk hover */
 }
 
+
+
 /* Body */
 body {
     background-color: var(--bg-color);
     color: #fff;
     line-height: 1.6;
 }
+
+
 
 /* Header & Navbar */
 header {
@@ -75,6 +81,40 @@ header nav ul.nav-links li a.active {
     color: var(--primary-color);
 }
 
+/* Burger menu styling */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Burger -> X animation */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
 /* Section umum */
 section {
     min-height: 100vh;
@@ -91,6 +131,8 @@ section {
 section:nth-child(even) {
     background: #181818;
 }
+
+
 
 /* Hero Section */
 #home {
@@ -143,6 +185,8 @@ section:nth-child(even) {
     transform: translateY(-3px);
 }
 
+
+
 /* Membership Cards */
 .membership-cards {
     display: flex;
@@ -178,6 +222,8 @@ section:nth-child(even) {
     margin: 0.5rem 0;
 }
 
+
+
 /* Contact Section */
 #contact p {
     color: var(--secondary-color);
@@ -188,7 +234,148 @@ section:nth-child(even) {
     margin: 0 auto;
 }
 
-/* jam */
+
+
+/* About Section */
+#about {
+    background: var(--section-bg);
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 3rem 10rem;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-image img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+
+
+/* facilities section */
+.facilities {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.facilities h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.facilities-desc {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.facility-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.facility-item {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.facility-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.facility-item:hover img {
+    transform: scale(1.08);
+}
+
+
+
+/* Products Section */
+.products {
+    background: var(--section-bg);
+    padding: 4rem 2rem;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.products-desc {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.product-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+
+
+/* Hour */
 
 .hours {
     margin: 1rem 0 2rem 0;
@@ -208,8 +395,8 @@ section:nth-child(even) {
 }
 
 
-/* map */
 
+/* maps */
 .map-container {
     width: 100%;
     max-width: 800px;
@@ -294,31 +481,16 @@ footer {
     padding-top: 1rem;
     color: #aaa;
 }
-/* Burger menu styling */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-}
 
-.menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background: var(--primary-color);
-    border-radius: 2px;
-    transition: all 0.3s;
-}
+
 
 /* Mobile Navbar */
 @media(max-width: 768px) {
+    /* burger navbar */
     .menu-toggle {
         display: flex;
     }
-
+    
     header nav ul.nav-links {
         position: absolute;
         top: 70px;
@@ -331,21 +503,44 @@ footer {
         display: none;
         border-radius: 5px;
     }
-
+    
+    
+    
+    /* about */
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-image img {
+        height: 240px;
+    }
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-image img {
+        height: 240px;
+    }
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-image img {
+        height: 240px;
+    }
     header nav ul.nav-links.active {
         display: flex;
     }
+
+
+
+    /* facilities */
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-item img {
+        height: 220px;
+    }
 }
 
-/* Burger -> X animation */
-.menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
