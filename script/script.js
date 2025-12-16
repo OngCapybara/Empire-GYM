@@ -70,3 +70,18 @@ navLi.forEach(link => {
         menuToggle.classList.remove('open');
     });
 });
+
+
+function calculateProtein() {
+    const weight = parseFloat(document.getElementById("weight").value);
+    const goal = parseFloat(document.getElementById("goal").value);
+    const result = document.querySelector("#protein-result h3");
+
+    if (isNaN(weight) || weight <= 0) {
+        result.textContent = "⚠ Masukkan berat badan yang valid";
+        return;
+    }
+
+    const protein = (weight * goal).toFixed(0);
+    result.textContent = `${protein} gram / hari`;
+}

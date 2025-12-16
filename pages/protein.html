@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Protein Calculator | Empire Gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Pakai CSS utama -->
+    <link rel="stylesheet" href="../style/index-style.css">
+</head>
+<body>
+
+<!-- HEADER SIMPLE -->
+<header class="simple-header">
+    <a href="../index.html" class="back-btn">← Kembali</a>
+    <h1>Protein Calculator</h1>
+</header>
+
+<section id="protein-calculator" class="full-page">
+    <p>Hitung kebutuhan protein harianmu sesuai target latihan</p>
+
+    <div class="protein-box">
+        <div class="input-group">
+            <label>Berat Badan (kg)</label>
+            <input type="number" id="weight" placeholder="contoh: 70">
+        </div>
+
+        <div class="input-group">
+            <label>Tujuan</label>
+            <select id="goal">
+                <option value="1.5">Maintenance</option>
+                <option value="2.0">Bulking (Naik Otot)</option>
+                <option value="1.8">Cutting (Turun Lemak)</option>
+            </select>
+        </div>
+
+        <button onclick="calculateProtein()" class="btn">
+            Hitung Protein
+        </button>
+
+        <div id="protein-result" class="result-box">
+            <span>Kebutuhan protein harian:</span>
+            <h3>—</h3>
+        </div>
+    </div>
+</section>
+
+<script src="../script/script.js"></script>
+</body>
+</html>

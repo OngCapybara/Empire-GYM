@@ -81,7 +81,9 @@ header nav ul.nav-links li a.active {
     color: var(--primary-color);
 }
 
-/* Burger menu styling */
+
+
+/* ================= Burger ================= */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -98,7 +100,6 @@ header nav ul.nav-links li a.active {
     border-radius: 3px;
     transition: 0.3s ease;
 }
-
 
 /* Burger -> X animation */
 .menu-toggle.open span:nth-child(1) {
@@ -135,7 +136,7 @@ section:nth-child(even) {
 
 
 
-/* Hero Section */
+/* ================= Home ================= */
 #home {
     position: relative;
     min-height: 100vh;
@@ -193,7 +194,7 @@ section:nth-child(even) {
 
 
 
-/* Membership Cards */
+/* ================= Memberships ================= */
 .membership-cards {
     display: flex;
     flex-wrap: wrap;
@@ -274,7 +275,7 @@ section:nth-child(even) {
 
 
 
-/* Contact Section */
+/* ================= Contact ================= */
 #contact p {
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
@@ -286,7 +287,7 @@ section:nth-child(even) {
 
 
 
-/* About Section */
+/* ================= About ================= */
 #about {
     background: var(--section-bg);
 }
@@ -317,7 +318,7 @@ section:nth-child(even) {
 
 
 
-/* facilities section */
+/* ================= Facilities ================= */
 .facilities {
     padding: 80px 20px;
     background-color: #f9f9f9;
@@ -362,7 +363,7 @@ section:nth-child(even) {
 
 
 
-/* Products Section */
+/* ================= Product ================= */
 .products {
     background: var(--section-bg);
     padding: 4rem 2rem;
@@ -425,8 +426,7 @@ section:nth-child(even) {
 
 
 
-/* Hour */
-
+/* ================= Hour ================= */
 .hours {
     margin: 1rem 0 2rem 0;
     text-align: center;
@@ -446,7 +446,7 @@ section:nth-child(even) {
 
 
 
-/* maps */
+/* ================= Maps ================= */
 .map-container {
     width: 100%;
     max-width: 800px;
@@ -457,7 +457,8 @@ section:nth-child(even) {
 }
 
 
-/* Footer */
+
+/* ================= Footer ================= */
 footer {
     background: #1a1a1a;
     color: #fff;
@@ -534,12 +535,8 @@ footer {
 
 
 
-/* ===================== */
+/* ================= Responsive ================= */
 /* TABLET (<= 1024px) */
-/* ===================== */
-/* ===================== */
-/* TABLET (<= 1024px) */
-/* ===================== */
 @media (max-width: 1024px) {
 
     header nav {
@@ -574,7 +571,9 @@ footer {
         font-size: 1.05rem;
     }
 
-    /* 🔥 PRODUCT → 2 kolom di tablet */
+
+
+    /* product */
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -582,12 +581,21 @@ footer {
     .product-card img {
         height: 190px;
     }
+
+
+
+    /* calculator */
+    .calc-container {
+        max-width: 380px;
+        padding: 1.8rem;
+    }
+    
+    .calc-container h2 {
+        font-size: 1.5rem;
+    }
 }
 
-
-/* ===================== */
 /* MOBILE (<= 768px) */
-/* ===================== */
 @media (max-width: 768px) {
     /* menu lebih kecil di HP */
     header nav ul.nav-links {
@@ -626,21 +634,50 @@ footer {
     }
     
     
+    
     /* product */
     .product-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .product-card img {
         height: 200px;
     }
 
+
+
+    /* calculator */
+    .calc-container {
+        max-width: 100%;
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .calc-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .calc-container input,
+    .calc-container select {
+        font-size: 0.95rem;
+        padding: 0.9rem;
+        border-radius: 12px;
+    }
+
+    .calc-container button {
+        font-size: 1rem;
+        padding: 0.9rem;
+        border-radius: 14px;
+    }
+
+    #protein-result {
+        font-size: 1.15rem;
+        border-radius: 16px;
+    }
 }
 
-
-/* ===================== */
 /* Animasi dropdown */
-/* ===================== */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -650,4 +687,136 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+/* ================================================ */
+/* ================= Protein Page ================= */
+/* ================================================ */
+.simple-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #111;
+}
+
+.simple-header h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.back-btn {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.full-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* PROTEIN CALCULATOR STYLE */
+#protein-calculator {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    padding: 3rem 1.5rem;
+}
+
+#protein-calculator > p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* box utama */
+.protein-box {
+    background: #141414;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* input group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+/* input & select */
+.input-group input,
+.input-group select {
+    background: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    color: #fff;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.15);
+}
+
+/* tombol */
+.protein-box .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.9rem;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.protein-box .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255,193,7,0.25);
+}
+
+/* hasil */
+.result-box {
+    background: #0d0d0d;
+    border-radius: 16px;
+    margin-top: 2rem;
+    padding: 1.2rem;
+    text-align: center;
+    border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.result-box span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.result-box h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0.4rem;
 }
