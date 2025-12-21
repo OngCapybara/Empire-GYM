@@ -2,50 +2,75 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Protein Calculator | Empire Gym</title>
+    <title>Kalkulator & Panduan Gizi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Pakai CSS utama -->
     <link rel="stylesheet" href="../style/index-style.css">
+    <link rel="icon" href="../assets/images/logo.jpg">
 </head>
 <body>
 
-<!-- HEADER SIMPLE -->
 <header class="simple-header">
-    <a href="../index.html" class="back-btn">← Kembali</a>
-    <h1>Protein Calculator</h1>
+    <h1>Kalkulator dan Informasi Gizi</h1>
+    <a href="../index.html" class="back-btn button-style">
+        <span class="icon"></span> Beranda Utama
+    </a>
 </header>
 
-<section id="protein-calculator" class="full-page">
-    <p>Hitung kebutuhan protein harianmu sesuai target latihan</p>
+<section id="calorie-calculator" class="full-page">
+    <p>Hitung Total Kalori Harian untuk mencapai target berat badanmu.</p>
 
     <div class="protein-box">
+        <h2>Kalkulator Kalori </h2>
         <div class="input-group">
             <label>Berat Badan (kg)</label>
-            <input type="number" id="weight" placeholder="contoh: 70">
+            <input type="number" id="berat" placeholder="contoh: 75" required>
         </div>
 
         <div class="input-group">
-            <label>Tujuan</label>
-            <select id="goal">
-                <option value="1.5">Maintenance</option>
-                <option value="2.0">Bulking (Naik Otot)</option>
-                <option value="1.8">Cutting (Turun Lemak)</option>
+            <label>Tinggi Badan (cm)</label>
+            <input type="number" id="tinggi" placeholder="contoh: 170" required>
+        </div>
+
+        <div class="input-group">
+            <label>Usia (tahun)</label>
+            <input type="number" id="usia" placeholder="contoh: 28" required>
+        </div>
+
+        <div class="input-group">
+            <label>Jenis Kelamin</label>
+            <select id="jk">
+                <option value="pria">Pria</option>
+                <option value="wanita">Wanita</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <label>Tingkat Aktivitas/Latihan</label>
+            <select id="aktivitas">
+                <option value="1.2">Jarang/Tidak Olahraga</option>
+                <option value="1.375">Ringan (1-3 hari/minggu)</option>
+                <option value="1.55" selected>Sedang (3-5 hari/minggu)</option>
+                <option value="1.725">Berat (6-7 hari/minggu)</option>
+                <option value="1.9">Sangat Berat (Atlet/2x sehari)</option>
             </select>
         </div>
 
-        <button onclick="calculateProtein()" class="btn">
-            Hitung Protein
+        <button onclick="hitungKalori()" class="btn">
+            Hitung
         </button>
 
-        <div id="protein-result" class="result-box">
-            <span>Kebutuhan protein harian:</span>
+        <div id="calorie-result" class="result-box">
+            <span>Kebutuhan Kalori Harian :</span>
             <h3>—</h3>
+            <small id="bmr-info"></small>
         </div>
     </div>
 </section>
 
-<section class="nutrition-page">
+
+
+<section class="nutrition-page" style="padding-top: 5rem;">
     <h1>Informasi Gizi Makanan Sehari-hari</h1>
     <p class="subtitle">
         Estimasi kandungan gizi per porsi umum
@@ -241,7 +266,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2025 Empire GYM. All Rights Reserved.</p>
+        <p>© 2025 Empire GYM. All Rights Reserved.</p>
     </div>
 </footer>
 

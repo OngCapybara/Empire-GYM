@@ -943,3 +943,80 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* ================= Back Button Style ================= */
+.simple-header {
+    display: flex; 
+    align-items: center; 
+    /* Ini memastikan jarak antara judul dan tombol maksimum */
+    justify-content: space-between; 
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #111; /* atau gunakan var(--card-bg) */
+    position: sticky; 
+    top: 0;
+    z-index: 998; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+
+
+.simple-header h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    flex-grow: 0; 
+    text-align: left; 
+    margin: 0;
+}
+
+.back-btn.button-style {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: #2a2a2a; /* Warna latar belakang gelap untuk tombol */
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    flex-shrink: 0; /* Mencegah tombol mengecil saat layar sempit */
+}
+
+.back-btn.button-style:hover {
+    background: #3a3a3a;
+    color: var(--btn-hover);
+}
+
+.back-btn .icon {
+    font-size: 1.1em;
+}
+
+/* Penyesuaian agar tombol tidak terlalu besar di mobile */
+@media (max-width: 768px) {
+    .simple-header {
+        padding: 1rem;
+    }
+    .back-btn.button-style {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    .back-btn .icon {
+        font-size: 1em;
+    }
+    .simple-header h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tambahkan ini di bagian akhir index-style.css */
+.protein-box h2 {
+    text-align: center; /* Memastikan judul H2 di dalam box rata tengah */
+    margin-bottom: 1.5rem; /* Mungkin perlu menambahkan jarak di bawah judul */
+}
+
+/* Jika Anda menggunakan H2 di halaman protein.html (yang kita revisi): */
+#calorie-calculator .protein-box h2 {
+    color: #FF8C00; /* Atau warna yang Anda inginkan */
+}

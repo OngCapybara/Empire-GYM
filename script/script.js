@@ -28,21 +28,25 @@ function checkGymStatus() {
     const minutes = now.getMinutes();
     const statusEl = document.getElementById('open-status');
 
-    let openHour, closeHour;
+    let openHour, openMinute, closeHour, closeMinute;
 
-    if(day >= 1 && day <= 5){ // Senin - Jumat
-        openHour = 7;  // 07:30
-        closeHour = 21; // 21:00
+    if (day >= 1 && day <= 5) { // Senin - Jumat
+        openHour = 7;
+        openMinute = 30;
+        closeHour = 21;
+        closeMinute = 30;
     } else { // Sabtu - Minggu
-        openHour = 7;  // 07:30
-        closeHour = 19; // 19:00
+        openHour = 7;
+        openMinute = 30;
+        closeHour = 18;
+        closeMinute = 30;
     }
 
-    const nowMinutes = hour*60 + minutes;
-    const openMinutes = openHour*60 + 30; // 07:30
-    const closeMinutes = closeHour*60;
+    const nowTotal = hour * 60 + minutes;
+    const openTotal = openHour * 60 + openMinute;
+    const closeTotal = closeHour * 60 + closeMinute;
 
-    if(nowMinutes >= openMinutes && nowMinutes <= closeMinutes){
+    if (nowTotal >= openTotal && nowTotal <= closeTotal) {
         statusEl.textContent = "OPEN";
         statusEl.style.color = "limegreen";
     } else {
@@ -50,6 +54,7 @@ function checkGymStatus() {
         statusEl.style.color = "red";
     }
 }
+
 
 // Jalankan saat load
 window.onload = checkGymStatus;
