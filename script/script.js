@@ -90,3 +90,46 @@ function calculateProtein() {
     const protein = (weight * goal).toFixed(0);
     result.textContent = `${protein} gram / hari`;
 }
+
+// =========================================================
+// ===== FUNGSI KALKULATOR KALORI HARIAN (TDEE/BMR) BARU =====
+// =========================================================
+function hitungKalori() {
+    // 1. Ambil nilai dari input HTML dari form TDEE
+    const berat = parseFloat(document.getElementById('berat').value);
+    const tinggi = parseFloat(document.getElementById('tinggi').value);
+    const usia = parseFloat(document.getElementById('usia').value);
+    const jk = document.getElementById('jk').value;
+    const aktivitasFaktor = parseFloat(document.getElementById('aktivitas').value);
+
+    const hasilTDEE = document.querySelector("#calorie-result h3");
+    const hasilBMRInfo = document.getElementById("bmr-info");
+
+    // Validasi input
+    if (isNaN(berat) || isNaN(tinggi) || isNaN(usia) || berat <= 0 || tinggi <= 0 || usia <= 0) {
+        hasilTDEE.textContent = "⚠ Lengkapi data fisik Anda";
+        hasilBMRInfo.textContent = "";
+        return; 
+    }
+
+    // 2. Hitung BMR (Basal Metabolic Rate) - Formula Mifflin-St Jeor
+    let bmr;
+    
+    if (jk === 'pria') {
+        // BMR Pria: (10 * BB) + (6.25 * TB) - (5 * U) + 5
+        bmr = (10 * berat) + (6.25 * tinggi) - (5 * usia) + 5;
+    } else { // Wanita
+        // BMR Wanita: (10 * BB) + (6.25 * TB) - (5 * U) - 161
+        bmr = (10 * berat) + (6.25 * tinggi) - (5 * usia) - 161;
+    }
+
+    // 3. Hitung TDEE (Total Daily Energy Expenditure)
+    const tdeeValue = bmr * aktivitasFaktor;
+    
+    // 4. Tampilkan Hasil
+    const tdeeFinal = Math.round(tdeeValue);
+    const bmrFinal = Math.round(bmr);
+    
+    hasilTDEE.textContent = `${tdeeFinal} kkal`;
+    hasilBMRInfo.textContent = `BMR (Istirahat): ${bmrFinal} kkal`;
+}
